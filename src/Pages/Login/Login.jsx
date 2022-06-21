@@ -8,8 +8,6 @@ function Login() {
 
     const { authenticated, login } = useContext(AuthContext)
 
-    console.log(authenticated)
-
     const handleSubmit = (e) => {
         e.preventDefault();
         login(email, password)

@@ -8,16 +8,17 @@ const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(false);
         const getUser = localStorage.getItem("user");
-
+        console.log(user)
         if (getUser) {
             setUser(JSON.parse(getUser))
+            console.log(user);
         }
         else {
             return
         }
 
-        setLoading(false);
     }, []);
 
     const login = (email, password) => {
